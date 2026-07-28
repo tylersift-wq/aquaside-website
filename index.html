@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aquaside — Power Washing, Window Cleaning & Mulching | Holland, PA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#hero" class="brand"><span class="dot"></span>Aquaside</a>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#area">Area</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="#contact" class="navcta">Get a quote</a>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="#services" onclick="this.parentElement.classList.remove('open')">Services</a>
+  <a href="#area" onclick="this.parentElement.classList.remove('open')">Area</a>
+  <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-layer" style="background:url('hero-clean-final.jpg') center/cover no-repeat;"></div>
+  <div class="hero-layer hero-dirty" style="background:url('hero-dirty-final.jpg') center/cover no-repeat; clip-path:inset(0 48% 0 0);"></div>
+  <div class="reveal-line"></div>
+  <span class="img-label" style="position:absolute; top:80px; left:16px; z-index:4;">Before</span>
+  <span class="img-label label-after" style="position:absolute; top:80px; right:16px; left:auto; z-index:4;">After</span>
+  <div class="hero-content">
+    <div class="hero-inner">
+      <div class="eyebrow hero-tag">Holland, PA &amp; surrounding area</div>
+      <h1>There's a clean line, and we're on the right side of it.</h1>
+      <p>Power washing, window cleaning, and mulching — done right by three guys who show up and get it done.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Get a free quote</a>
+        <a href="#services" class="btn btn-ghost">See services</a>
+      </div>
+    </div>
+  </div>
+  <div class="reveal-hint">click &amp; drag &rarr;</div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <span>Free quotes</span>
+    <span>Same-week booking</span>
+    <span>Pay on completion</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section fade-in" id="services">
+  <div class="wrap">
+    <div class="section-head centered">
+      <div class="eyebrow">What we do</div>
+      <h2>Three services. No middlemen, no upsells.</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>Power Washing</h3>
+        <p>Siding, driveways, sidewalks, decks, patios, fences — we blast off dirt, mold, mildew, and years of buildup.</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>Window Cleaning</h3>
+        <p>Crystal-clear windows on single-story homes. Interior and exterior cleaning that lets the light back in.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>Mulching</h3>
+        <p>Fresh mulch to keep your beds looking clean, prevent weeds, and boost your curb appeal.</p>
+      </div>
+    </div>
+    <div style="margin-top:48px; padding:32px; border:1px solid var(--line); background:var(--foam); text-align:center;">
+      <div class="eyebrow" style="margin-bottom:8px;">And more</div>
+      <h3 style="font-size:1.3rem; margin-bottom:8px;">Odd Jobs & Other Help</h3>
+      <p style="color:var(--stone); font-size:0.95rem; max-width:500px; margin:0 auto;">Need something else done around the house? Gutter cleaning, deck scrubbing, patio furniture cleaning, small hauling — if it needs doing, we'll figure it out. Just ask.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- SERVICE AREA -->
+<section class="area-section fade-in" id="area">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:var(--wash);">Service area</div>
+      <h2>Based in Holland. We come to you.</h2>
+    </div>
+    <div id="service-map" style="border-radius:4px; overflow:hidden; height:400px; margin-bottom:24px;"></div>
+    <p style="color:rgba(243,247,246,0.78); margin-bottom:16px;">Serving Holland, PA and everywhere within 10 miles</p>
+    <ul class="area-list">
+      <li>Holland</li>
+      <li>Northampton</li>
+      <li>Southampton</li>
+      <li>Richboro</li>
+      <li>Churchville</li>
+      <li>Warminster</li>
+      <li>Ivyland</li>
+      <li>Hatboro</li>
+      <li>Horsham</li>
+      <li>Willow Grove</li>
+      <li>Feasterville-Trevose</li>
+      <li>Bensalem</li>
+      <li>Langhorne</li>
+      <li>Newtown</li>
+      <li>Yardley</li>
+      <li>Morrisville</li>
+      <li>Levittown</li>
+      <li>Fairless Hills</li>
+      <li>Penndel</li>
+      <li>Doylestown</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section fade-in" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="section-head">
+          <div class="eyebrow">Get in touch</div>
+          <h2>Tell us what needs cleaning up.</h2>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/mbdnqkpq" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="tel" name="phone" placeholder="Phone Number">
+          <select name="service">
+            <option value="" disabled selected>Select a Service</option>
+            <option>Power Washing</option>
+            <option>Window Cleaning</option>
+            <option>Mulching</option>
+            <option>Multiple Services</option>
+          </select>
+          <textarea name="message" placeholder="Tell us about the job..."></textarea>
+          <input type="hidden" name="_next" value="thanks.html">
+          <button type="submit">Send Request</button>
+        </form>
+      </div>
+      <div>
+        <div class="quote-box" style="margin-bottom:24px;">
+          <div class="eyebrow">Quick quote</div>
+          <h3>No job too small.</h3>
+          <p>Text a few photos and your address — we'll send back a price before we ever show up. Pay when the job's done, no deposit needed.</p>
+          <a href="sms:+12679820607" class="btn btn-primary">Text us now</a>
+        </div>
+        <div class="contact-methods">
+          <div class="method">
+            <span class="label">Call / Text</span>
+            <span class="value">(267) 982-0607</span>
+          </div>
+          <div class="method">
+            <span class="label">Instagram</span>
+            <span class="value">@aquaside.pa</span>
+          </div>
+          <div class="method">
+            <span class="label">Email</span>
+            <span class="value">aquasidepennsylvania@gmail.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section alt fade-in">
+  <div class="wrap">
+    <div class="section-head centered">
+      <div class="eyebrow">FAQ</div>
+      <h2>Common questions.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Do you bring your own equipment?</summary>
+        <p>Yes! We bring everything we need — pressure washers, cleaning supplies, mowers, trimmers, and all products. The only thing we ask is access to your outdoor water hose for power washing and window cleaning.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I schedule a service?</summary>
+        <p>Fill out the form above, give us a call, or text us. We'll get back to you within 24 hours to set up a time that works for you.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you offer recurring services?</summary>
+        <p>Absolutely! We offer weekly, bi-weekly, and monthly plans for landscaping and can set up regular power washing and window cleaning schedules too.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What areas do you serve?</summary>
+        <p>We serve Holland, PA and everywhere within a 10-mile radius. Check the map above or contact us to confirm we cover your location.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's your cancellation policy?</summary>
+        <p>We ask for at least 24 hours notice if you need to cancel or reschedule. No fees for cancellations made with proper notice.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#hero" class="brand"><span class="dot"></span>Aquaside</a>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#area">Area</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="fine">Holland, PA — power washing, window cleaning &amp; mulching</div>
+  </div>
+</footer>
+
+<script>
+  // Hero before/after slider
+  const hero = document.getElementById('hero');
+  const before = document.querySelector('.hero-dirty');
+  const line = document.querySelector('.reveal-line');
+  function setReveal(pct){
+    pct = Math.max(0, Math.min(100, pct));
+    before.style.clipPath = 'inset(0 '+(100-pct)+'% 0 0)';
+    line.style.left = pct+'%';
+  }
+  let dragging = false;
+  hero.addEventListener('mousedown', e => { dragging = true; e.preventDefault(); });
+  window.addEventListener('mouseup', () => { dragging = false; });
+  hero.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    const r = hero.getBoundingClientRect();
+    setReveal(((e.clientX - r.left) / r.width) * 100);
+  });
+  hero.addEventListener('touchstart', () => { dragging = true; }, {passive:true});
+  window.addEventListener('touchend', () => { dragging = false; });
+  hero.addEventListener('touchmove', e => {
+    if (!dragging) return;
+    const r = hero.getBoundingClientRect();
+    setReveal(((e.touches[0].clientX - r.left) / r.width) * 100);
+  }, {passive:true});
+
+  // Scroll animations
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const map = L.map('service-map').setView([40.24, -75.04], 11);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution:'&copy; OpenStreetMap contributors'
+  }).addTo(map);
+  L.circle([40.24, -75.04], {
+    radius:16093,
+    color:'#E8A857',
+    fillColor:'#E8A857',
+    fillOpacity:0.15,
+    weight:2
+  }).addTo(map);
+  L.marker([40.24, -75.04]).addTo(map)
+    .bindPopup('<b>Aquaside</b><br>Holland, PA<br>10-mile service radius')
+    .openPopup();
+</script>
+
+</body>
+</html>
