@@ -137,7 +137,8 @@
           <div class="eyebrow">Get in touch</div>
           <h2>Tell us what needs cleaning up.</h2>
         </div>
-        <form class="contact-form" action="https://formspree.io/f/mbdnqkpq" method="POST">
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+          <input type="hidden" name="bot-field">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
           <input type="tel" name="phone" placeholder="Phone Number">
@@ -149,7 +150,7 @@
             <option>Multiple Services</option>
           </select>
           <textarea name="message" placeholder="Tell us about the job..."></textarea>
-          <input type="hidden" name="_next" value="thanks.html">
+
           <button type="submit">Send Request</button>
         </form>
       </div>
